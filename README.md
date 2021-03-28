@@ -22,7 +22,7 @@ sudo apt-get install asciinema
 which asciinema
 ```
 
-![asciinema](img/asciinema.png)
+![asciinema](/EXP02/img/asciinema.png)
 
 出现上图所示就证明asciinema下载安装成功了
 
@@ -36,7 +36,7 @@ vimtutor
 
 vimtutor是vim打开的一个临时文件，给初学者提供vim的操作方法
 
-![vimtutor](img/tutor.png)
+![vimtutor](/EXP02/img/tutor.png)
 
 
 
