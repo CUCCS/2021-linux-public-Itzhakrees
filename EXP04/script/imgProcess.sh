@@ -17,35 +17,21 @@ Help(){
 JPG_compress(){
     path=$1
     Quality=$2
-    
-    if [ -d "$Quality" ]; then
 
-        if [ -d "$path" ]; then
-
-                #调用find找到对应的path内的jpg文件
-            for file in $(find "$path" -name "*.jpg" ); do
+            #调用find找到对应的path内的jpg文件
+        for file in $(find "$path" -name "*.jpg" ); do
 
                 echo $file
 
                 # 调用imagemagick
                 $(convert "${file}" -quality "${Quality}" "${file}")
-
-            done
-
-        else
-            echo "$path not exists"
-        fi
-
-    else
-        echo "no key value"
-    fi
+        done
 }
 
 ResolutionCompressed(){
     path=$1
     Resolution=$2
-    
-    if [ -d "$path" ]; then
+
 
             #调用find找到对应的path内的jpg,png,svg文件
         for file in $(find "$path" -name "*.jpg" -or -name "*.png" -or -name "*.svg"); do
@@ -57,17 +43,12 @@ ResolutionCompressed(){
 
         done
 
-    else
-        echo "$path not exists"
-    fi
 }
 
 AddCustomTextWatermark() {
     path=$1
     font_size=$2
     text=$3
-
-    if [ -d "$path" ]; then
 
             #调用find找到对应的path内的jpg,png,svg文件
         for file in $(find "$path" -name "*.jpg" -or -name "*.png" -or -name "*.svg"); do
@@ -79,9 +60,6 @@ AddCustomTextWatermark() {
 
         done
 
-    else
-        echo "$path not exists"
-    fi
 }
 
 function AddPrefix {
@@ -145,7 +123,7 @@ while [ "$1" != "" ];do
         exit 0
         ;;
     "-h")
-        help
+        Help
         exit 0
         ;;
   esac
